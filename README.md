@@ -1,3 +1,5 @@
+# LatinInflectedLexicon
+
 This is an inflected lexicon of Latin verbs. It includes all the 254 inflected forms (including gerund, gerundive, supine and participles) of 3348 verbs extracted from Delatte et al. (1981)'s Dictionnaire fréquentiel et Index inverse de la langue latine. The forms have been generated semi-automatically using the database of Lemlat (www.lemlat3.eu).
 
 In the first column, there is a univocal identifier of the lexeme to which the form belongs, corresponding to the lemma used in Lemlat. In those rare cases where two or more verbs have the same lemma in Lemlat, a numeric diacritic is added.
