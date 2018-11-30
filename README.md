@@ -6,7 +6,7 @@ In the first column, there is a univocal identifier of the lexeme to which the f
 
 In the second column, the paradigm cell occupied by the form is coded using the PoS-tags of the Universal Part-of-Speech Tagset by Petrov et al. (2012), followed by a colon and by a set of values (separated by a +) of the following morphological features, used in Universal Dependencies (http://universaldependencies.org/u/feat/index.html) :
 
-- VerbForm (Fin, Inf, Ger, Gdv, Part);
+- VerbForm (Fin, Inf, Ger, Gdv, Part, Sup);
 - Mood (Ind, Sub, Imp);
 - Tense (Pres, Imp, Fut, Past, Pqp);
 - Aspect (Imp, Perf);
@@ -16,7 +16,7 @@ In the second column, the paradigm cell occupied by the form is coded using the 
 - Case (Nom, Gen, Dat, Acc, Voc, Abl);
 - Gender (Masc, Fem, Neut).
 
-In the third column, the form itself is reported.
+In the third column, the form itself is reported. Defective cells are marked as #DEF#.
 
 The remaining columns provide information on the form's frequency, taken from Tombeur's (1998) Thesaurus Formarum Totius Latinitatis, reporting the total number of occurrences as well as data divided in four different epochs:
 
