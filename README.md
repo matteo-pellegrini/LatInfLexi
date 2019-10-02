@@ -24,3 +24,5 @@ The remaining columns provide information on the form's frequency, taken from To
 - Aetas Patrum (2nd century-735 A.D.);
 - Medium Aeuum (736-1499);
 - Recentior Latinitas (1500-1965).
+
+LatInfLexi is distributed under a Creative Commons-Attribution-ShareAlike license (https://creativecommons.org/licenses/by-sa/3.0/).
