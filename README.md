@@ -1,6 +1,6 @@
 # LatInfLexi
 
-This is an inflected lexicon of Latin verbs. It includes all the 254 inflected forms (including gerund, gerundive, supine and participles) of 3,348 verbs extracted from Delatte et al.'s (1981) Dictionnaire fréquentiel et Index inverse de la langue latine. The forms have been generated semi-automatically using the database of Lemlat (www.lemlat3.eu).
+This is an inflected lexicon of Latin verbs and nouns. It includes all the 254 inflected forms (including gerund, gerundive, supine and participles) of 3,348 verbs extracted from Delatte et al.'s (1981) Dictionnaire fréquentiel et Index inverse de la langue latine, and all the 12 inflected forms of the 1,038 most frequent nouns in the same resource. The forms have been generated semi-automatically using the database of Lemlat (www.lemlat3.eu).
 
 In the first column, there is a univocal identifier of the lexeme to which the form belongs, corresponding to the lemma used in Lemlat. In those rare cases where two or more verbs have the same lemma in Lemlat, a numeric diacritic is added.
 
@@ -15,6 +15,8 @@ In the second column, the paradigm cell occupied by the form is coded using the 
 - Number (Sing, Plur);
 - Case (Nom, Gen, Dat, Acc, Voc, Abl);
 - Gender (Masc, Fem, Neut).
+
+All the morphological features are reported for verbs, while for nouns only Case and Number are relevant (Gender being left out as it is an inherent property of lexemes for nouns).
 
 In the third column, the form itself is reported. Defective cells are marked as #DEF#.
 
