@@ -1,0 +1,13 @@
+cell_id,ud,unimorph,cell_romance_aligned,cell_romance_comment,LatInFlexi-cell
+nom.sg,Case=Nom|Number=Sing,N;NOM;SG,,,NOUN:Nom+Sing
+gen.sg,Case=Gen|Number=Sing,N;GEN;SG,,,NOUN:Gen+Sing
+dat.sg,Case=Dat|Number=Sing,N;DAT;SG,,,NOUN:Dat+Sing
+acc.sg,Case=Acc|Number=Sing,N;ACC;SG,,,NOUN:Acc+Sing
+voc.sg,Case=Voc|Number=Sing,N;VOC;SG,,,NOUN:Voc+Sing
+abl.sg,Case=Abl|Number=Sing,N;ABL;SG,,,NOUN:Abl+Sing
+nom.pl,Case=Nom|Number=Plur,N;NOM;PL,,,NOUN:Nom+Plur
+gen.pl,Case=Gen|Number=Plur,N;GEN;PL,,,NOUN:Gen+Plur
+dat.pl,Case=Dat|Number=Plur,N;DAT;PL,,,NOUN:Dat+Plur
+acc.pl,Case=Acc|Number=Plur,N;ACC;PL,,,NOUN:Acc+Plur
+voc.pl,Case=Voc|Number=Plur,N;VOC;PL,,,NOUN:Voc+Plur
+abl.pl,Case=Abl|Number=Plur,N;ABL;PL,,,NOUN:Abl+Plur
