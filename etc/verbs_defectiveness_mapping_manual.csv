@@ -72,7 +72,7 @@ addo	none
 addubito	none
 adduco	none
 adedo	none
-adeo	intransitive
+adeo	none
 adequito	intransitive
 adhaereo	intransitive
 adhaeresco	intransitive
@@ -209,7 +209,7 @@ antecapio	none
 antecedo	none
 antecello	none
 antecurro	none
-anteeo	eo
+anteeo	none
 antefero	none
 antehabeo	none
 antepono	none
@@ -397,7 +397,7 @@ circumcludo	none
 circumcurso	none
 circumdo	none
 circumduco	none
-circumeo	eo
+circumeo	none
 circumfero	none
 circumflecto	none
 circumfluo	none
@@ -1640,7 +1640,7 @@ induo	none
 induresco	intransitive
 induro	none
 inebrio	none
-ineo	eo
+ineo	none
 ineptio	intransitive
 inerro	none
 inesco	none
@@ -2509,7 +2509,7 @@ praesumo	none
 praetego	none
 praetendo	none
 praetento	none
-praetereo	eo
+praetereo	none
 praeterfluo	none
 praetergredior	deponent
 praeterlabor	deponent
@@ -2646,7 +2646,7 @@ quaero	none
 quaeso	none
 quasso	none
 quatio	none
-queo	eo
+queo	none
 queritor	deponent
 queror	deponent
 quiesco	intransitive
@@ -3026,7 +3026,7 @@ suadeo	none
 subdeficio	intransitive
 subdo	none
 subduco	none
-subeo	eo
+subeo	none
 subiaceo	intransitive
 subicio	none
 subiecto	none
@@ -3204,7 +3204,7 @@ traicio	none
 transcendo	none
 transcribo	none
 transcurro	none
-transeo	eo
+transeo	none
 transero	none
 transfero	none
 transfigo	none
@@ -3279,7 +3279,7 @@ uello	none
 uelo	none
 uendito	none
 uendo	none
-ueneo	eo
+ueneo	none
 ueneror/-o	none
 uenio	intransitive
 uenor	deponent
