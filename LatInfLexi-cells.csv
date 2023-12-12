@@ -20,9 +20,9 @@ fut.act.ind.3.pl,VerbForm=Fin|Mood=Ind|Tense=Fut|Aspect=Imp|Voice=Act|Person=3|N
 prs.act.sbjv.1.sg,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=1|Number=Sing,V;FIN;ACT;PRS;IPFV;SBJV;1;SG,PRS-SBJV~1SG,,VERB:Fin+Sub+Pres+-+Act+1+Sing+-+-,verb,335837,36172,128200,162292,9173
 prs.act.sbjv.2.sg,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=2|Number=Sing,V;FIN;ACT;PRS;IPFV;SBJV;2;SG,PRS-SBJV~2SG,,VERB:Fin+Sub+Pres+-+Act+2+Sing+-+-,verb,204562,35870,76010,85317,7365
 prs.act.sbjv.3.sg,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=3|Number=Sing,V;FIN;ACT;PRS;IPFV;SBJV;3;SG,PRS-SBJV~3SG,,VERB:Fin+Sub+Pres+-+Act+3+Sing+-+-,verb,607274,49238,220414,309866,27756
-prs.act.sbjv.1.pl,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=1|Number=Plur,V;FIN;ACT;PRS;IPFV;SBJV;1;PL,PRS-SBJV~1PL,,VERB:Fin+Sub+Pres+-+Act+1+Plur+-+-,verb,86034,5222,42354,34506,3952
+prs.act.sbjv.1.pl,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=1|Number=Plur,V;FIN;ACT;PRS;IPFV;SBJV;1;PL,PRS-SBJV~1PL,,VERB:Fin+Sub+Pres+-+Act+1+Plur+-+-,verb,86028,5219,42352,34506,3951
 prs.act.sbjv.2.pl,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=2|Number=Plur,V;FIN;ACT;PRS;IPFV;SBJV;2;PL,PRS-SBJV~2PL,,VERB:Fin+Sub+Pres+-+Act+2+Plur+-+-,verb,24985,2013,11230,11505,237
-prs.act.sbjv.3.pl,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=3|Number=Plur,V;FIN;ACT;PRS;IPFV;SBJV;3;PL,PRS-SBJV~3PL,,VERB:Fin+Sub+Pres+-+Act+3+Plur+-+-,verb,187805,17946,73624,82958,13277
+prs.act.sbjv.3.pl,VerbForm=Fin|Mood=Sub|Tense=Pres|Aspect=Imp|Voice=Act|Person=3|Number=Plur,V;FIN;ACT;PRS;IPFV;SBJV;3;PL,PRS-SBJV~3PL,,VERB:Fin+Sub+Pres+-+Act+3+Plur+-+-,verb,187811,17949,73626,82958,13278
 iprf.act.sbjv.1.sg,VerbForm=Fin|Mood=Sub|Tense=Past|Aspect=Imp|Voice=Act|Person=1|Number=Sing,V;FIN;ACT;PST;IPFV;SBJV;1;SG,IMPERF-SBJV~1SG,,VERB:Fin+Sub+Imp+Imp+Act+1+Sing+-+-,verb,20404,4861,7374,7404,765
 iprf.act.sbjv.2.sg,VerbForm=Fin|Mood=Sub|Tense=Past|Aspect=Imp|Voice=Act|Person=2|Number=Sing,V;FIN;ACT;PST;IPFV;SBJV;2;SG,IMPERF-SBJV~2SG,,VERB:Fin+Sub+Imp+Imp+Act+2+Sing+-+-,verb,15269,3197,6932,4808,332
 iprf.act.sbjv.3.sg,VerbForm=Fin|Mood=Sub|Tense=Past|Aspect=Imp|Voice=Act|Person=3|Number=Sing,V;FIN;ACT;PST;IPFV;SBJV;3;SG,IMPERF-SBJV~3SG,,VERB:Fin+Sub+Imp+Imp+Act+3+Sing+-+-,verb,258814,30582,94530,129072,4630
