@@ -1,0 +1,906 @@
+{
+  "title": "PrinParLat",
+  "profile": "data-package",
+  "licenses": [
+    {
+      "name": "CC BY-SA 4.0 DEED",
+      "title": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "path": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Matteo Pellegrini",
+      "role": "author"
+    },
+    {
+      "title": "Marco Passarotti",
+      "role": "contributor"
+    },
+    {
+      "title": "Sacha Beniamine",
+      "role": "contributor"
+    }
+  ],
+  "keywords": [
+    "Latin",
+    "verbs",
+    "nouns",
+    "paradigms",
+    "cells"
+  ],
+  "version": "2.0",
+  "resources": [
+    {
+      "name": "forms",
+      "type": "table",
+      "title": "Inflected forms",
+      "path": "LatInfLexi-forms.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "forms-schema",
+        "fields": [
+          {
+            "name": "form_id",
+            "type": "string",
+            "title": "Form table row identifiers",
+            "description": "These identifiers are specific to form, lexeme, cell triples.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "lexeme",
+            "type": "string",
+            "title": "Reference to a lexeme identifier",
+            "description": "Lexeme identifiers must be unique to paradigms.",
+            "constraints": {
+              "required": true
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#lexeme"
+          },
+          {
+            "name": "cell",
+            "type": "string",
+            "title": "Reference to a cell identifier",
+            "description": "The set of feature values as would appear in a gloss, separated by dots, eg. prs.ind.1sg or f.pl",
+            "constraints": {
+              "required": true
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#cell"
+          },
+          {
+            "name": "orth_form",
+            "type": "string",
+            "title": "Inflected form (orthographic)",
+            "description": "The form, given orthographically",
+            "missingValues": [
+              "#DEF#"
+            ],
+            "constraints": {
+              "pattern": "(a|ā|b|c|d|e|ē|f|g|h|i|ī|k|l|m|n|o|ō|p|q|r|s|t|u|ū|x|y|z)+"
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#orth_form"
+          },
+          {
+            "name": "phon_form",
+            "type": "string",
+            "title": "Inflected form (phonemic or phonetic)",
+            "description": "The form, given in phonemic or phonetic notation, with sounds separated by spaces",
+            "missingValues": [
+              "#DEF#"
+            ],
+            "constraints": {
+              "pattern": "(ˈaː|ˈeː|ˈiː|ˈoː|ˈuː|ˈyː|pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|ˈa|ˈe|ˈi|ˈo|ˈu|ˈy|b|d|ɡ|m|n|l|r|z|p|f|t|s|k|h|j|w|a|e|i|o|u|y)( (ˈaː|ˈeː|ˈiː|ˈoː|ˈuː|ˈyː|pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|ˈa|ˈe|ˈi|ˈo|ˈu|ˈy|b|d|ɡ|m|n|l|r|z|p|f|t|s|k|h|j|w|a|e|i|o|u|y))*"
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#phon_form"
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": "Frequency",
+            "description": "Frequency for this row.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#frequency"
+          },
+          {
+            "name": "frequency_Antiquitas",
+            "type": "number",
+            "title": "Frequency in the Antiquitas",
+            "description": "The frequency of this item in the Antiquitas epoch in Tombeur's Thesaurus (from the origins to the end of the 2nd century A.D.)"
+          },
+          {
+            "name": "frequency_AetasPatrum",
+            "type": "number",
+            "title": "Frequency in the Aetas Patrum",
+            "description": "The frequency of this item in the Aetas Patrum epoch in Tombeur's Thesaurus (2nd century-735 A.D.)"
+          },
+          {
+            "name": "frequency_MediumAeuum",
+            "type": "number",
+            "title": "Frequency in the Medium Aeuum",
+            "description": "The frequency of this item in the Medium Aeuum epoch in Tombeur's Thesaurus (736-1499)"
+          },
+          {
+            "name": "frequency_RecentiorLatinitas",
+            "type": "number",
+            "title": "Frequency in the Recentior Latinitas",
+            "description": "The frequency of this item in the Recention Latinitas epoch in Tombeur's Thesaurus (1500-1965)"
+          },
+          {
+            "name": "POS",
+            "type": "string",
+            "title": "Part of Speech",
+            "description": "The relevant part of speech for this item. This must refer to a PartOfSpeech entity from the lexinfo (https://lexinfo.net/) ontology.",
+            "constraints": {
+              "enum": [
+                "verb",
+                "numeral",
+                "conjunction",
+                "noun",
+                "adposition",
+                "determiner",
+                "article",
+                "adverb",
+                "pronoun",
+                "fusedPreposition",
+                "adjective",
+                "symbol",
+                "particle",
+                "conditionalParticle",
+                "demonstrativePronoun",
+                "interjection",
+                "semiColon",
+                "diminutiveNoun",
+                "possessivePronoun",
+                "prepositionalAdverb",
+                "compoundPreposition",
+                "interrogativeRelativePronoun",
+                "possessiveParticle",
+                "plainVerb",
+                "letter",
+                "interrogativeDeterminer",
+                "relativePronoun",
+                "postposition",
+                "fusedPronounAuxiliary",
+                "interrogativeOrdinalNumeral",
+                "indefiniteOrdinalNumeral",
+                "strongPersonalPronoun",
+                "possessiveRelativePronoun",
+                "ordinalAdjective",
+                "collectivePronoun",
+                "commonNoun",
+                "infinitiveParticle",
+                "comparativeParticle",
+                "partitiveArticle",
+                "invertedComma",
+                "lightVerb",
+                "emphaticPronoun",
+                "distinctiveParticle",
+                "genericNumeral",
+                "possessiveAdjective",
+                "reflexivePossessivePronoun",
+                "colon",
+                "coordinationParticle",
+                "presentParticipleAdjective",
+                "fusedPrepositionPronoun",
+                "cardinalNumeral",
+                "indefiniteDeterminer",
+                "numeralFraction",
+                "questionMark",
+                "generalAdverb",
+                "superlativeParticle",
+                "point",
+                "indefiniteMultiplicativeNumeral",
+                "comma",
+                "closeParenthesis",
+                "futureParticle",
+                "personalPronoun",
+                "reflexivePersonalPronoun",
+                "adverbialPronoun",
+                "reciprocalPronoun",
+                "openParenthesis",
+                "pastParticipleAdjective",
+                "negativePronoun",
+                "relativeDeterminer",
+                "existentialPronoun",
+                "pronominalAdverb",
+                "relativeParticle",
+                "exclamativeDeterminer",
+                "multiplicativeNumeral",
+                "reflexiveDeterminer",
+                "modal",
+                "unclassifiedParticle",
+                "properNoun",
+                "allusivePronoun",
+                "interrogativeCardinalNumeral",
+                "bullet",
+                "subordinatingConjunction",
+                "irreflexivePersonalPronoun",
+                "possessiveDeterminer",
+                "negativeParticle",
+                "indefinitePronoun",
+                "generalizationWord",
+                "coordinatingConjunction",
+                "deficientVerb",
+                "adjective-i",
+                "impersonalPronoun",
+                "indefiniteCardinalNumeral",
+                "adjective-na",
+                "qualifierAdjective",
+                "affirmativeParticle",
+                "mainVerb",
+                "fusedPrepositionDeterminer",
+                "indefiniteArticle",
+                "weakPersonalPronoun",
+                "suspensionPoints",
+                "interrogativeMultiplicativeNumeral",
+                "affixedPersonalPronoun",
+                "auxiliary",
+                "circumposition",
+                "copula",
+                "demonstrativeDeterminer",
+                "participleAdjective",
+                "exclamativePoint",
+                "interrogativePronoun",
+                "presentativePronoun",
+                "punctuation",
+                "definiteArticle",
+                "slash",
+                "exclamativePronoun",
+                "preposition",
+                "conditionalPronoun",
+                "relationNoun",
+                "interrogativeParticle"
+              ]
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#POS"
+          }
+        ],
+        "primaryKey": [
+          "form_id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "cell"
+            ],
+            "reference": {
+              "resource": "cells",
+              "fields": [
+                "cell_id"
+              ]
+            }
+          },
+          {
+            "fields": [
+              "lexeme"
+            ],
+            "reference": {
+              "resource": "lexemes",
+              "fields": [
+                "lexeme_id"
+              ]
+            }
+          }
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Form"
+    },
+    {
+      "name": "cells",
+      "type": "table",
+      "title": "Paradigm cells",
+      "path": "LatInfLexi-cells.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "cells-schema",
+        "fields": [
+          {
+            "name": "cell_id",
+            "type": "string",
+            "title": "Cell identifier",
+            "description": "The set of feature values as would appear in a gloss, separated by dots, eg. prs.ind.1sg or f.pl",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "pattern": "(iprf|pprf|fprf|pass|sbjv|ptcp|prs|fut|prf|act|ind|imp|inf|sup|ger|gdv|nom|gen|dat|acc|voc|abl|sg|pl|1|2|3|m|f|n)(\\.(iprf|pprf|fprf|pass|sbjv|ptcp|prs|fut|prf|act|ind|imp|inf|sup|ger|gdv|nom|gen|dat|acc|voc|abl|sg|pl|1|2|3|m|f|n))*"
+            }
+          },
+          {
+            "name": "ud",
+            "type": "string",
+            "title": "Cell in the universal dependency format",
+            "description": "The cell, written following the universal dependency format",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#ud"
+          },
+          {
+            "name": "unimorph",
+            "type": "string",
+            "title": "Cell in unimorph format",
+            "description": "The cell, written following the unimorph schema",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#unimorph"
+          },
+          {
+            "name": "cell_romance_aligned",
+            "type": "string",
+            "title": "cell code in OODRVM",
+            "description": "The code used for this cell in the Oxford Online Database of Romance Verb Morphology"
+          },
+          {
+            "name": "cell_LatInfLexi_v1",
+            "type": "string",
+            "title": "cell code in LatInfLexi v1.1",
+            "description": "The code used for this cell in the previous release of LatInfLexi (v1.1)"
+          },
+          {
+            "name": "POS",
+            "type": "string",
+            "title": "Part of Speech",
+            "description": "The relevant part of speech for this item. This must refer to a PartOfSpeech entity from the lexinfo (https://lexinfo.net/) ontology.",
+            "constraints": {
+              "enum": [
+                "verb",
+                "numeral",
+                "conjunction",
+                "noun",
+                "adposition",
+                "determiner",
+                "article",
+                "adverb",
+                "pronoun",
+                "fusedPreposition",
+                "adjective",
+                "symbol",
+                "particle",
+                "conditionalParticle",
+                "demonstrativePronoun",
+                "interjection",
+                "semiColon",
+                "diminutiveNoun",
+                "possessivePronoun",
+                "prepositionalAdverb",
+                "compoundPreposition",
+                "interrogativeRelativePronoun",
+                "possessiveParticle",
+                "plainVerb",
+                "letter",
+                "interrogativeDeterminer",
+                "relativePronoun",
+                "postposition",
+                "fusedPronounAuxiliary",
+                "interrogativeOrdinalNumeral",
+                "indefiniteOrdinalNumeral",
+                "strongPersonalPronoun",
+                "possessiveRelativePronoun",
+                "ordinalAdjective",
+                "collectivePronoun",
+                "commonNoun",
+                "infinitiveParticle",
+                "comparativeParticle",
+                "partitiveArticle",
+                "invertedComma",
+                "lightVerb",
+                "emphaticPronoun",
+                "distinctiveParticle",
+                "genericNumeral",
+                "possessiveAdjective",
+                "reflexivePossessivePronoun",
+                "colon",
+                "coordinationParticle",
+                "presentParticipleAdjective",
+                "fusedPrepositionPronoun",
+                "cardinalNumeral",
+                "indefiniteDeterminer",
+                "numeralFraction",
+                "questionMark",
+                "generalAdverb",
+                "superlativeParticle",
+                "point",
+                "indefiniteMultiplicativeNumeral",
+                "comma",
+                "closeParenthesis",
+                "futureParticle",
+                "personalPronoun",
+                "reflexivePersonalPronoun",
+                "adverbialPronoun",
+                "reciprocalPronoun",
+                "openParenthesis",
+                "pastParticipleAdjective",
+                "negativePronoun",
+                "relativeDeterminer",
+                "existentialPronoun",
+                "pronominalAdverb",
+                "relativeParticle",
+                "exclamativeDeterminer",
+                "multiplicativeNumeral",
+                "reflexiveDeterminer",
+                "modal",
+                "unclassifiedParticle",
+                "properNoun",
+                "allusivePronoun",
+                "interrogativeCardinalNumeral",
+                "bullet",
+                "subordinatingConjunction",
+                "irreflexivePersonalPronoun",
+                "possessiveDeterminer",
+                "negativeParticle",
+                "indefinitePronoun",
+                "generalizationWord",
+                "coordinatingConjunction",
+                "deficientVerb",
+                "adjective-i",
+                "impersonalPronoun",
+                "indefiniteCardinalNumeral",
+                "adjective-na",
+                "qualifierAdjective",
+                "affirmativeParticle",
+                "mainVerb",
+                "fusedPrepositionDeterminer",
+                "indefiniteArticle",
+                "weakPersonalPronoun",
+                "suspensionPoints",
+                "interrogativeMultiplicativeNumeral",
+                "affixedPersonalPronoun",
+                "auxiliary",
+                "circumposition",
+                "copula",
+                "demonstrativeDeterminer",
+                "participleAdjective",
+                "exclamativePoint",
+                "interrogativePronoun",
+                "presentativePronoun",
+                "punctuation",
+                "definiteArticle",
+                "slash",
+                "exclamativePronoun",
+                "preposition",
+                "conditionalPronoun",
+                "relationNoun",
+                "interrogativeParticle"
+              ]
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#POS"
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": "Frequency",
+            "description": "Frequency for this row.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#frequency"
+          },
+          {
+            "name": "frequency_Antiquitas",
+            "type": "number",
+            "title": "Frequency in the Antiquitas",
+            "description": "The frequency of this item in the Antiquitas epoch in Tombeur's Thesaurus (from the origins to the end of the 2nd century A.D.)"
+          },
+          {
+            "name": "frequency_AetasPatrum",
+            "type": "number",
+            "title": "Frequency in the Aetas Patrum",
+            "description": "The frequency of this item in the Aetas Patrum epoch in Tombeur's Thesaurus (2nd century-735 A.D.)"
+          },
+          {
+            "name": "frequency_MediumAeuum",
+            "type": "number",
+            "title": "Frequency in the Medium Aeuum",
+            "description": "The frequency of this item in the Medium Aeuum epoch in Tombeur's Thesaurus (736-1499)"
+          },
+          {
+            "name": "frequency_RecentiorLatinitas",
+            "type": "number",
+            "title": "Frequency in the Recentior Latinitas",
+            "description": "The frequency of this item in the Recention Latinitas epoch in Tombeur's Thesaurus (1500-1965)"
+          }
+        ],
+        "primaryKey": [
+          "cell_id"
+        ],
+        "foreignKeys": []
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Cell"
+    },
+    {
+      "name": "features-values",
+      "type": "table",
+      "title": "Grammatical features values",
+      "path": "LatInfLexi-features-values.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "features-values-schema",
+        "fields": [
+          {
+            "name": "value_id",
+            "type": "string",
+            "title": "Grammatical Feature value identifier",
+            "description": "Identifier for the grammatical feature value (as found in the cell)",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "label",
+            "type": "string",
+            "title": "label for this row",
+            "description": "A human readable label for the row.",
+            "rdfProperty": "http://www.w3.org/2000/01/rdf-schema#label"
+          },
+          {
+            "name": "feature",
+            "type": "string",
+            "title": "feature",
+            "description": "The name of the dimension of this feature, eg. case, tense, modality, voice, force, gender, evidentiality, person, number, polarity...",
+            "constraints": {
+              "required": true
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#feature"
+          },
+          {
+            "name": "canonical_order",
+            "type": "integer",
+            "title": "Sorting order for visual presentation",
+            "description": "The order in which items are canonically presented. Use integers to represent relative order, order is used per-item.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#canonical_order"
+          }
+        ],
+        "primaryKey": [
+          "value_id"
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#FeatureValue"
+    },
+    {
+      "name": "sounds",
+      "type": "table",
+      "title": "Sound inventory with distinctive features",
+      "path": "LatInfLexi-sounds.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "sounds-schema",
+        "fields": [
+          {
+            "name": "sound_id",
+            "type": "string",
+            "title": "sound representation",
+            "description": "These identifiers are specific to sounds.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "consonantal",
+            "type": "any"
+          },
+          {
+            "name": "stress",
+            "type": "any"
+          },
+          {
+            "name": "sonorant",
+            "type": "any"
+          },
+          {
+            "name": "approximant",
+            "type": "any"
+          },
+          {
+            "name": "voice",
+            "type": "any"
+          },
+          {
+            "name": "spread_glottis",
+            "type": "any"
+          },
+          {
+            "name": "continuant",
+            "type": "any"
+          },
+          {
+            "name": "nasal",
+            "type": "any"
+          },
+          {
+            "name": "lateral",
+            "type": "any"
+          },
+          {
+            "name": "labial",
+            "type": "any"
+          },
+          {
+            "name": "labiodental",
+            "type": "any"
+          },
+          {
+            "name": "coronal",
+            "type": "any"
+          },
+          {
+            "name": "dorsal",
+            "type": "any"
+          },
+          {
+            "name": "high",
+            "type": "any"
+          },
+          {
+            "name": "low",
+            "type": "any"
+          },
+          {
+            "name": "front",
+            "type": "any"
+          },
+          {
+            "name": "back",
+            "type": "any"
+          },
+          {
+            "name": "long",
+            "type": "any"
+          },
+          {
+            "name": "round",
+            "type": "any"
+          }
+        ],
+        "missingValues": [
+          ""
+        ],
+        "primaryKey": [
+          "sound_id"
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Sound"
+    },
+    {
+      "name": "graphemes",
+      "type": "table",
+      "title": "Graphemes inventory",
+      "path": "LatInfLexi-graphemes.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "graphemes-schema",
+        "fields": [
+          {
+            "name": "grapheme_id",
+            "type": "string",
+            "title": "grapheme representation",
+            "description": "These identifiers are specific to graphemes.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            },
+            "rdfType": "http://linguistics-ontology.org/gold/2010/Grapheme"
+          },
+          {
+            "name": "canonical_order",
+            "type": "integer",
+            "title": "Sorting order for visual presentation",
+            "description": "The order in which items are canonically presented. Use integers to represent relative order, order is used per-item.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#canonical_order"
+          }
+        ],
+        "missingValues": [
+          ""
+        ],
+        "primaryKey": [
+          "grapheme_id"
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Grapheme"
+    },
+    {
+      "name": "lexemes",
+      "type": "table",
+      "title": "Lexemes",
+      "path": "LatInfLexi-lexemes.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "lexemes-schema",
+        "fields": [
+          {
+            "name": "lexeme_id",
+            "type": "string",
+            "title": "Identifier for the lexeme",
+            "description": "Lexeme identifiers. Often, they are identical to the label (lemma). However, they must be unique to paradigms, distinguishing homonyms with different inflection. For example, the animal mouse/mice and the computer peripheric mouse/mouses would both have the label 'mouse' but could be identified by the lexeme identifiers mouse_1 and mouse_2.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "POS",
+            "type": "string",
+            "title": "Part of Speech",
+            "description": "The relevant part of speech for this item. This must refer to a PartOfSpeech entity from the lexinfo (https://lexinfo.net/) ontology.",
+            "constraints": {
+              "enum": [
+                "verb",
+                "numeral",
+                "conjunction",
+                "noun",
+                "adposition",
+                "determiner",
+                "article",
+                "adverb",
+                "pronoun",
+                "fusedPreposition",
+                "adjective",
+                "symbol",
+                "particle",
+                "conditionalParticle",
+                "demonstrativePronoun",
+                "interjection",
+                "semiColon",
+                "diminutiveNoun",
+                "possessivePronoun",
+                "prepositionalAdverb",
+                "compoundPreposition",
+                "interrogativeRelativePronoun",
+                "possessiveParticle",
+                "plainVerb",
+                "letter",
+                "interrogativeDeterminer",
+                "relativePronoun",
+                "postposition",
+                "fusedPronounAuxiliary",
+                "interrogativeOrdinalNumeral",
+                "indefiniteOrdinalNumeral",
+                "strongPersonalPronoun",
+                "possessiveRelativePronoun",
+                "ordinalAdjective",
+                "collectivePronoun",
+                "commonNoun",
+                "infinitiveParticle",
+                "comparativeParticle",
+                "partitiveArticle",
+                "invertedComma",
+                "lightVerb",
+                "emphaticPronoun",
+                "distinctiveParticle",
+                "genericNumeral",
+                "possessiveAdjective",
+                "reflexivePossessivePronoun",
+                "colon",
+                "coordinationParticle",
+                "presentParticipleAdjective",
+                "fusedPrepositionPronoun",
+                "cardinalNumeral",
+                "indefiniteDeterminer",
+                "numeralFraction",
+                "questionMark",
+                "generalAdverb",
+                "superlativeParticle",
+                "point",
+                "indefiniteMultiplicativeNumeral",
+                "comma",
+                "closeParenthesis",
+                "futureParticle",
+                "personalPronoun",
+                "reflexivePersonalPronoun",
+                "adverbialPronoun",
+                "reciprocalPronoun",
+                "openParenthesis",
+                "pastParticipleAdjective",
+                "negativePronoun",
+                "relativeDeterminer",
+                "existentialPronoun",
+                "pronominalAdverb",
+                "relativeParticle",
+                "exclamativeDeterminer",
+                "multiplicativeNumeral",
+                "reflexiveDeterminer",
+                "modal",
+                "unclassifiedParticle",
+                "properNoun",
+                "allusivePronoun",
+                "interrogativeCardinalNumeral",
+                "bullet",
+                "subordinatingConjunction",
+                "irreflexivePersonalPronoun",
+                "possessiveDeterminer",
+                "negativeParticle",
+                "indefinitePronoun",
+                "generalizationWord",
+                "coordinatingConjunction",
+                "deficientVerb",
+                "adjective-i",
+                "impersonalPronoun",
+                "indefiniteCardinalNumeral",
+                "adjective-na",
+                "qualifierAdjective",
+                "affirmativeParticle",
+                "mainVerb",
+                "fusedPrepositionDeterminer",
+                "indefiniteArticle",
+                "weakPersonalPronoun",
+                "suspensionPoints",
+                "interrogativeMultiplicativeNumeral",
+                "affixedPersonalPronoun",
+                "auxiliary",
+                "circumposition",
+                "copula",
+                "demonstrativeDeterminer",
+                "participleAdjective",
+                "exclamativePoint",
+                "interrogativePronoun",
+                "presentativePronoun",
+                "punctuation",
+                "definiteArticle",
+                "slash",
+                "exclamativePronoun",
+                "preposition",
+                "conditionalPronoun",
+                "relationNoun",
+                "interrogativeParticle"
+              ]
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#POS"
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": "Frequency",
+            "description": "Frequency for this row.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#frequency"
+          },
+          {
+            "name": "frequency_Antiquitas",
+            "type": "number",
+            "title": "Frequency in the Antiquitas",
+            "description": "The frequency of this item in the Antiquitas epoch in Tombeur's Thesaurus (from the origins to the end of the 2nd century A.D.)"
+          },
+          {
+            "name": "frequency_AetasPatrum",
+            "type": "number",
+            "title": "Frequency in the Aetas Patrum",
+            "description": "The frequency of this item in the Aetas Patrum epoch in Tombeur's Thesaurus (2nd century-735 A.D.)"
+          },
+          {
+            "name": "frequency_MediumAeuum",
+            "type": "number",
+            "title": "Frequency in the Medium Aeuum",
+            "description": "The frequency of this item in the Medium Aeuum epoch in Tombeur's Thesaurus (736-1499)"
+          },
+          {
+            "name": "frequency_RecentiorLatinitas",
+            "type": "number",
+            "title": "Frequency in the Recentior Latinitas",
+            "description": "The frequency of this item in the Recention Latinitas epoch in Tombeur's Thesaurus (1500-1965)"
+          }
+        ],
+        "primaryKey": [
+          "lexeme_id"
+        ],
+        "foreignKeys": [],
+        "foreignKey": []
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Lexeme"
+    }
+  ],
+  "citation": "Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.",
+  "id": "?",
+  "basepath": "C:\\Users\\matteo.pellegrini\\OneDrive - Università Cattolica del Sacro Cuore\\Desktop\\lavoro\\GitHub repo\\LatInfLexi"
+}

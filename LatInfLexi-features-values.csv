@@ -1,4 +1,4 @@
-value_id,value_label,feature,canonical_order
+value_id,label,feature,canonical_order
 prs,present,tense-aspect,1
 iprf,imperfect,tense-aspect,2
 fut,future,tense-aspect,3

@@ -1,0 +1,32 @@
+sound_id,label,CLTS_id
+b,voiced bilabial stop consonant,https://clts.clld.org/parameters/voiced_bilabial_stop_consonant
+d,voiced alveolar stop consonant,https://clts.clld.org/parameters/voiced_alveolar_stop_consonant
+ɡ,voiced velar stop consonant,https://clts.clld.org/parameters/voiced_velar_stop_consonant
+m,voiced bilabial nasal consonant,https://clts.clld.org/parameters/voiced_bilabial_nasal_consonant
+n,voiced alveolar nasal consonant,https://clts.clld.org/parameters/voiced_alveolar_nasal_consonant
+l,voiced alveolar lateral approximant consonant,https://clts.clld.org/parameters/voiced_alveolar_lateral_approximant_consonant
+r,voiced alveolar trill consonant,https://clts.clld.org/parameters/voiced_alveolar_trill_consonant
+z,voiced alveolar sibilant fricative consonant,https://clts.clld.org/parameters/voiced_alveolar_sibilant_fricative_consonant
+p,voiceless bilabial stop consonant,https://clts.clld.org/parameters/voiceless_bilabial_stop_consonant
+pʰ,aspirated voiceless bilabial stop consonant,https://clts.clld.org/parameters/aspirated_voiceless_bilabial_stop_consonant
+f,voiceless labio-dental fricative consonant,https://clts.clld.org/parameters/voiceless_labio-dental_fricative_consonant
+t,voiceless alveolar stop consonant,https://clts.clld.org/parameters/voiceless_alveolar_stop_consonant
+tʰ,aspirated voiceless alveolar stop consonant,https://clts.clld.org/parameters/aspirated_voiceless_alveolar_stop_consonant
+s,voiceless alveolar sibilant fricative consonant,https://clts.clld.org/parameters/voiceless_alveolar_sibilant_fricative_consonant
+k,voiceless velar stop consonant,https://clts.clld.org/parameters/voiceless_velar_stop_consonant
+kʰ,aspirated voiceless velar stop consonant,https://clts.clld.org/parameters/aspirated_voiceless_velar_stop_consonant
+h,voiceless glottal fricative consonant,https://clts.clld.org/parameters/voiceless_glottal_fricative_consonant
+j,voiced palatal approximant consonant,https://clts.clld.org/parameters/voiced_palatal_approximant_consonant
+w,voiced labio-velar approximant consonant,https://clts.clld.org/parameters/voiced_labio-velar_approximant_consonant
+a,unrounded open front vowel,https://clts.clld.org/parameters/unrounded_open_front_vowel
+aː,long unrounded open front vowel,https://clts.clld.org/parameters/long_unrounded_open_front_vowel
+e,unrounded close-mid front vowel,https://clts.clld.org/parameters/unrounded_close-mid_front_vowel
+eː,long unrounded close-mid front vowel,https://clts.clld.org/parameters/long_unrounded_close-mid_front_vowel
+i,unrounded close front vowel,https://clts.clld.org/parameters/unrounded_close_front_vowel
+iː,long unrounded close front vowel,https://clts.clld.org/parameters/long_unrounded_close_front_vowel
+o,rounded close-mid back vowel,https://clts.clld.org/parameters/rounded_close-mid_back_vowel
+oː,long rounded close-mid back vowel,https://clts.clld.org/parameters/long_rounded_close-mid_back_vowel
+u,rounded close back vowel,https://clts.clld.org/parameters/rounded_close_back_vowel
+uː,long rounded close back vowel,https://clts.clld.org/parameters/long_rounded_close_back_vowel
+y,rounded close front vowel,https://clts.clld.org/parameters/rounded_close_front_vowel
+yː,long rounded close front vowel,https://clts.clld.org/parameters/long_rounded_close_front_vowel
