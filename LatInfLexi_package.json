@@ -95,7 +95,7 @@
               "#DEF#"
             ],
             "constraints": {
-              "pattern": "(ˈaː|ˈeː|ˈiː|ˈoː|ˈuː|ˈyː|pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|ˈa|ˈe|ˈi|ˈo|ˈu|ˈy|b|d|ɡ|m|n|l|r|z|p|f|t|s|k|h|j|w|a|e|i|o|u|y)( (ˈaː|ˈeː|ˈiː|ˈoː|ˈuː|ˈyː|pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|ˈa|ˈe|ˈi|ˈo|ˈu|ˈy|b|d|ɡ|m|n|l|r|z|p|f|t|s|k|h|j|w|a|e|i|o|u|y))*"
+              "pattern": "((ˈ|ː)*(pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*)( ((ˈ|ː)*(pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*))*"
             },
             "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#phon_form"
           },
@@ -583,80 +583,220 @@
             }
           },
           {
-            "name": "consonantal",
-            "type": "any"
+            "name": "tier",
+            "type": "string",
+            "title": "Tier to which the feature pertains",
+            "description": "Tier to which the feature pertains"
           },
           {
-            "name": "stress",
-            "type": "any"
+            "name": "value",
+            "type": "string",
+            "title": "Value of the feature",
+            "description": "Value of the feature for non segmental tiers"
+          },
+          {
+            "name": "consonantal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [consonantal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [consonantal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "sonorant",
-            "type": "any"
-          },
-          {
-            "name": "approximant",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [sonorant]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [sonorant]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "voice",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [voice]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [voice]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "laryngeal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [laryngeal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [laryngeal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "spread_glottis",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [spread_glottis]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [spread_glottis]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "continuant",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [continuant]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [continuant]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "nasal",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [nasal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [nasal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "lateral",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [lateral]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [lateral]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
-            "name": "labial",
-            "type": "any"
-          },
-          {
-            "name": "labiodental",
-            "type": "any"
+            "name": "labial_consonantal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [labial_consonantal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [labial_consonantal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "coronal",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [coronal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [coronal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
-            "name": "dorsal",
-            "type": "any"
+            "name": "dorsal_consonantal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [dorsal_consonantal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [dorsal_consonantal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "syllabic",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [syllabic]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [syllabic]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "labial_vocalic",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [labial_vocalic]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [labial_vocalic]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "dorsal_vocalic",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [dorsal_vocalic]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [dorsal_vocalic]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "high",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [high]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [high]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "low",
-            "type": "any"
-          },
-          {
-            "name": "front",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [low]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [low]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           },
           {
             "name": "back",
-            "type": "any"
-          },
-          {
-            "name": "long",
-            "type": "any"
-          },
-          {
-            "name": "round",
-            "type": "any"
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [back]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [back]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
           }
         ],
         "missingValues": [
