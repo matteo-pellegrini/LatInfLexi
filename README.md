@@ -18,6 +18,6 @@ As for columns that are not defined in the Paralex standard, but have been added
 - In the cells table:
     - in the column cell_romance_aligned, the code used for a cell in the Oxford Online Database of Romance Verb Morphology (http://romverbmorph.clp.ox.ac.uk/) is given.
 
-This repository also contains a piece of code that takes in input the previous release of LatInfLexi (1.1) and applies all the systematic changes that are necessary to generate the forms, cells and lexemes tables this new version (see the folder LatInfLexi_to_Paralex). The other tables have been created or updated manually whwnever necessary.
+This repository also contains a piece of code that takes in input the previous release of LatInfLexi (1.1) and applies all the systematic changes that are necessary to generate the forms, cells and lexemes tables this new version (see the folder LatInfLexi_to_Paralex). The other tables have been created or updated manually whenever necessary.
 
 LatInfLexi is distributed under a Creative Commons-Attribution-ShareAlike 4.0 International license (https://creativecommons.org/licenses/by-sa/4.0/).
