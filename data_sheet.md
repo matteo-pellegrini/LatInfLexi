@@ -2,11 +2,9 @@ Data set name: LatInfLexi 2.0
 
 Citation: Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.
 
-Data set developer: Matteo Pellegrini
+Data set developer: Matteo Pellegrini, Marco Passarotti, Sacha Beniamine
 
 Data sheet author: Matteo Pellegrini
-
-Others who contributed to this document: Marco Passarotti, Sacha Beniamine
 
 # Motivation
 
@@ -16,11 +14,7 @@ This dataset was originally created to allow for a quantitative analysis of pred
 
 **Who created the dataset (for example, which team, research group) and on behalf of which entity (for example, company, institution, organization)?**
 
-This dataset was created by Matteo Pellegrini during as part of his PhD, supervised by Pierluigi Cuzzolin at the University of Bergamo.
-
-**Who funded the creation of the dataset?** 
-
-The creation of the dataset was funded by my PhD. 
+This dataset was created by Matteo Pellegrini as part of his PhD, supervised by Pierluigi Cuzzolin at the University of Bergamo.
 
 # Composition
 
@@ -28,7 +22,7 @@ Paralex datasets document paradigms of inflected forms.
 
 **Are forms given as orthographic, phonetic, and or phonemic sequences ?**
 
-Forms are given both in orthographic and phonetich transcriptions.
+Forms are given both in orthographic and phonetich transcription.
 
 **How many instances are there in total?**
 
@@ -40,9 +34,6 @@ Forms are given both in orthographic and phonetich transcriptions.
 
 -   BCP-47 language tag: lat
 -   Language variety description: Latin, mostly as spoken in the Classical, Pre-Classical and Post-Classical times
-
-**Does the data pertain to specific dialects, geographical locations, genre, etc ?**
-
 
 **Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set?** 
 
@@ -57,7 +48,6 @@ Verbs that are explicitly marked as deponents in our data source are coded as de
 Verbs that are explicitly marked as "perfectum tantum" in our data source are coded as defective of imperfective forms.
 Nouns that are explicitly marked as "pluralia tantum" in our data source are coded as defective of singular forms.
 Missing forms that are not marked as defective should be interpreted as missing data. that cannot be generated on the basis of the information provided by our data source.
-
 
 **Are there any errors, sources of noise, or redundancies in the dataset?** If so, please provide a description.
 
@@ -74,6 +64,8 @@ The dataset is self-contained.
 
 The forms have been generated exploiting the information provided in the database of a morphological analyzer of Latin, Lemlat 3.0 (https://github.com/CIRCSE/LEMLAT3).
 The frequencies have been obtained from Tombeur's (1998) *Thesaurus Formarum Totius Latinitatis*.
+The feature-value specifications for sounds are based on Cser (2020) *The Phonology of Classical Latin*, with some adaptations, mostly to account for the sounds that are present in this database but not in Cser's account because they are only (possibly) attested in loanwords -- e.g., aspirated consonants.
+The feature-value specifications for cells are based on the categories used in most traditional descriptions of Latin.
 
 **How were paradigms separated between lexemes (eg. in the case of homonyms or variants) ? What theoretical or practical choices were made ?**
 
@@ -81,7 +73,7 @@ The assignment of forms to lexemes reflects the information that can be inferred
 
 **How was the paradigm structure (set and labels of paradigm cells) decided ? What theoretical or practical choices were made ?**
 
-The dataset included all the cells that are filled by a synthetic form: cells that are always filled by a periphrase (e.g., all perfective forms of Latin verbs) are excluded.
+The dataset includes all the cells that are filled by a synthetic form: cells that are always filled by a periphrase (e.g., all perfective forms of Latin verbs) are excluded.
 For nouns, the locative is excluded because of its marginality.
 
 **What is the expertise of the contributors with the documented language ?**
@@ -99,7 +91,6 @@ The work for the creation of this resource has been carried out during Matteo Pe
 The data of this resource have been obtained from the database of Lemlat 3.0, as documented in Passarotti, M & Budassi, M & Litta, E. & Ruffolo, P. 2017. *The Lemlat 3.0 Package for Morphological Analysis of Latin*. Proceedings of the NoDaLiDa 2017 Workshop on Processing Historical Language.
 
 **Were any ethical review processes conducted (for example, by an institutional review board)?** If so, please provide a description of these review processes, including the outcomes, as well as a link or other access point to any supporting documentation.
-
 
 No ethical review process was needed.
 
@@ -136,7 +127,7 @@ The dataset is already available.
 
 **Will the dataset be distributed under a copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)?** 
 
-The dataset is distributed under a Creative Commons-Attribution-ShareAlike license (https://creativecommons.org/licenses/by-sa/3.0/).
+The dataset is distributed under a Creative Commons-Attribution-ShareAlike 4.0 International license (https://creativecommons.org/licenses/by-sa/4.0/).
 
 # Maintenance
 

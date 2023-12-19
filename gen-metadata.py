@@ -1,6 +1,6 @@
 from paralex import paralex_factory
 
-package = paralex_factory("PrinParLat",
+package = paralex_factory("LatInfLexi",
                           {
                               "forms": {"path": "LatInfLexi-forms.csv",
                                 "schema": {
