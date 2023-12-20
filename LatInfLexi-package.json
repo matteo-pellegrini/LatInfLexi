@@ -775,18 +775,6 @@
             ]
           },
           {
-            "name": "low",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [low]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [low]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
             "name": "back",
             "type": "boolean",
             "title": "Whether the sound displays the feature [back]",
