@@ -2,7 +2,7 @@ Data set name: LatInfLexi 2.0
 
 Citation: Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.
 
-Data set developer: Matteo Pellegrini, Marco Passarotti, Sacha Beniamine
+Data set developers: Matteo Pellegrini, Marco Passarotti, Sacha Beniamine
 
 Data sheet author: Matteo Pellegrini
 
@@ -47,7 +47,7 @@ Verbs that are explicitly marked as impersonals in our data source are coded as 
 Verbs that are explicitly marked as deponents in our data source are coded as defective of morphologically active forms.
 Verbs that are explicitly marked as "perfectum tantum" in our data source are coded as defective of imperfective forms.
 Nouns that are explicitly marked as "pluralia tantum" in our data source are coded as defective of singular forms.
-Missing forms that are not marked as defective should be interpreted as missing data. that cannot be generated on the basis of the information provided by our data source.
+Missing forms that are not marked as defective should be interpreted as missing data that cannot be generated on the basis of the information provided by our data source.
 
 **Are there any errors, sources of noise, or redundancies in the dataset?** If so, please provide a description.
 
@@ -64,7 +64,7 @@ The dataset is self-contained.
 
 The forms have been generated exploiting the information provided in the database of a morphological analyzer of Latin, Lemlat 3.0 (https://github.com/CIRCSE/LEMLAT3).
 The frequencies have been obtained from Tombeur's (1998) *Thesaurus Formarum Totius Latinitatis*.
-The feature-value specifications for sounds are based on Cser (2020) *The Phonology of Classical Latin*, with some adaptations, mostly to account for the sounds that are present in this database but not in Cser's account because they are only (possibly) attested in loanwords -- e.g., aspirated consonants.
+The feature-value specifications for sounds are based on Cser (2020) *The Phonology of Classical Latin*, with some adaptations, mostly to account for the sounds that are present in this database but not in Cser's account -- e.g., aspirated consonants.
 The feature-value specifications for cells are based on the categories used in most traditional descriptions of Latin.
 
 **How were paradigms separated between lexemes (eg. in the case of homonyms or variants) ? What theoretical or practical choices were made ?**
@@ -78,7 +78,7 @@ For nouns, the locative is excluded because of its marginality.
 
 **What is the expertise of the contributors with the documented language ?**
 
-Matteo Pellegrini is an expert of the Latin language.
+Matteo Pellegrini and Marco Passarotti are experts of the Latin language.
 
 **Who was involved in the data collection process (for example, students, crowdworkers, contractors) and how were they compensated (for example, how much were crowdworkers paid)?**
 
@@ -112,7 +112,7 @@ The phonetic transcriptions have been obtained semi-automatically on the basis o
 
 **Has the dataset been used for any published work already?** 
 
-The dataset has been used for several publications on paradigm structure in Latin by Matteo Pellegrini and collaborators. The most up-to-date and complete analysis can be found in Pellegrini. 2023. *Paradigm Structure and Predictability in Latin Inflection. An Entropy-based Approach*.
+The dataset (in its previous version) has been used for several publications on paradigm structure in Latin by Matteo Pellegrini and collaborators. The most up-to-date and complete analysis can be found in Pellegrini. 2023. *Paradigm Structure and Predictability in Latin Inflection. An Entropy-based Approach*.
 It has also been used to supply information on Latin for the Oxford Online Database of Romance Verb Morphology (Beniamine, Maiden & Round. 2020. Opening the Romance Verbal Inflection Dataset 2.0: a CLDF Lexicon. https://aclanthology.org/2020.lrec-1.370.pdf)
 
 # Distribution.

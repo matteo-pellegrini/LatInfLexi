@@ -95,7 +95,7 @@
               "#DEF#"
             ],
             "constraints": {
-              "pattern": "((ˈ|ː)*(pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*)( ((ˈ|ː)*(pʰ|tʰ|kʰ|aː|eː|iː|oː|uː|yː|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*))*"
+              "pattern": "((ˈ|ː)*(pʰ|tʰ|kʰ|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*)( ((ˈ|ː)*(pʰ|tʰ|kʰ|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*))*"
             },
             "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#phon_form"
           },
@@ -1041,6 +1041,6 @@
     }
   ],
   "citation": "Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.",
-  "id": "?",
+  "id": "10.5281/zenodo.10409396",
   "basepath": "C:\\Users\\matteo.pellegrini\\OneDrive - Università Cattolica del Sacro Cuore\\Desktop\\lavoro\\GitHub repo\\LatInfLexi"
 }
