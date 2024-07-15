@@ -171,6 +171,7 @@ package = paralex_factory("LatInfLexi",
                                         {'title': 'Sacha Beniamine', 'role': 'contributor'}],
                           licenses=[{'name': 'CC BY-SA 4.0 DEED',
                                      'title': 'Creative Commons Attribution-ShareAlike 4.0 International',
-                                     'path': 'https://creativecommons.org/licenses/by-sa/4.0/'}]
+                                     'path': 'https://creativecommons.org/licenses/by-sa/4.0/'}],
+                          name="latinflexi"
                           )
 package.to_json("LatInfLexi-package.json")
