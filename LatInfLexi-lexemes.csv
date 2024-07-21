@@ -3236,7 +3236,7 @@ praerumpo_v,verb,1640,403,792,439,6
 praesaepio_v,verb,26,4,10,12,0
 praesagio_v,verb,351,100,70,167,14
 praescisco_v,verb,2207,50,579,1558,20
-praescribo_v,verb,1888,171,909,618,190
+praescribo_v,verb,5460,430,2604,1791,635
 praeseco_v,verb,59,29,24,6,0
 praesentia_n,noun,16906,935,6483,8774,714
 praesentio_v,verb,14281,479,5660,7682,460
@@ -3918,7 +3918,7 @@ strepo_v,verb,2854,478,1048,1250,78
 strideo_v,verb,1207,467,368,359,13
 strido_v,verb,1202,486,354,349,13
 strigo_v,verb,21,15,4,2,0
-stringo_v,verb,3299,865,864,1398,172
+stringo_v,verb,4621,1052,1370,1989,210
 struo_v,verb,5033,1201,1605,1775,452
 studeo_v,verb,11067,538,3729,6436,364
 studium_n,noun,33315,5489,12256,14016,1554
