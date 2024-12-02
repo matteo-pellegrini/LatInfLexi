@@ -28,7 +28,8 @@ freq_recentiorLatinitas = {"name": "frequency_RecentiorLatinitas",
 freq_cols = [freq_antiquitas, freq_aetasPatrum, freq_mediumAeuum, freq_recentiorLatinitas]
 
 package = paralex_factory("LatInfLexi",
-                          {
+                          {   "readme": {"path": "README.md"},
+                              "data_sheet": {"path": "data_sheet.md"},
                               "forms": {"path": "LatInfLexi-forms.csv",
                                         "schema": {"fields": freq_cols}
                                         },
@@ -172,6 +173,7 @@ package = paralex_factory("LatInfLexi",
                           licenses=[{'name': 'CC BY-SA 4.0 DEED',
                                      'title': 'Creative Commons Attribution-ShareAlike 4.0 International',
                                      'path': 'https://creativecommons.org/licenses/by-sa/4.0/'}],
+                          languages_iso639=["lat"],
                           name="latinflexi"
                           )
 package.to_json("LatInfLexi-package.json")
