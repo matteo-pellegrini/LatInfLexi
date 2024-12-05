@@ -1,6 +1,6 @@
-Data set name: LatInfLexi 2.0
+Data set name: LatInfLexi 2.0.1
 
-Citation: Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.
+Citation: Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0.1. Online.
 
 Data set developers: Matteo Pellegrini, Marco Passarotti, Sacha Beniamine
 
