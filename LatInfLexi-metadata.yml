@@ -1,0 +1,286 @@
+title: LatInfLexi
+licenses:
+- name: CC BY-SA 4.0 DEED
+  title: Creative Commons Attribution-ShareAlike 4.0 International
+  path: https://creativecommons.org/licenses/by-sa/4.0/
+contributors:
+- title: Matteo Pellegrini
+  role: author
+- title: Marco Passarotti
+  role: contributor
+- title: Sacha Beniamine
+  role: contributor
+keywords:
+- Latin
+- verbs
+- nouns
+- paradigms
+- cells
+version: '2.0'
+citation: Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0.
+  Online.
+id: http://doi.org/10.5281/zenodo.10522692
+languages_iso639:
+- lat
+name: latinflexi
+files:
+  readme: 
+    path: "README.md"
+  data_sheet: 
+    path: "data_sheet.md"
+  cells:
+    path: "LatInfLexi-cells.csv"
+    schema:
+        name: cells-schema
+        fields:
+            - name: frequency
+              type: number
+              title: Frequency
+              description: Frequency for this row.
+              rdfProperty: https://www.paralex-standard.org/paralex_ontology.xml#frequency
+            - name: frequency_Antiquitas
+              type: number
+              title: Frequency in the Antiquitas
+              description: The frequency of this item in the Antiquitas epoch in Tombeur's
+                Thesaurus (from the origins to the end of the 2nd century A.D.)
+            - name: frequency_AetasPatrum
+              type: number
+              title: Frequency in the Aetas Patrum
+              description: The frequency of this item in the Aetas Patrum epoch in Tombeur's
+                Thesaurus (2nd century-735 A.D.)
+            - name: frequency_MediumAeuum
+              type: number
+              title: Frequency in the Medium Aeuum
+              description: The frequency of this item in the Medium Aeuum epoch in Tombeur's
+                Thesaurus (736-1499)
+            - name: frequency_RecentiorLatinitas
+              type: number
+              title: Frequency in the Recentior Latinitas
+              description: The frequency of this item in the Recention Latinitas epoch in
+                Tombeur's Thesaurus (1500-1965)
+  features-values:
+    path: "LatInfLexi-features-values.csv"
+  forms:
+    path: "LatInfLexi-forms.csv"
+    schema:
+        name: forms-schema
+        fields:
+            - name: cell_romance_aligned
+              type: string
+              title: cell code in OODRVM
+              description: The code used for this cell in the Oxford Online Database of Romance
+                Verb Morphology
+            - name: cell_LatInfLexi_v1
+              type: string
+              title: cell code in LatInfLexi v1.1
+              description: The code used for this cell in the previous release of LatInfLexi
+                (v1.1)
+            - name: frequency
+              type: number
+              title: Frequency
+              description: Frequency for this row.
+              rdfProperty: https://www.paralex-standard.org/paralex_ontology.xml#frequency
+            - name: frequency_Antiquitas
+              type: number
+              title: Frequency in the Antiquitas
+              description: The frequency of this item in the Antiquitas epoch in Tombeur's
+                Thesaurus (from the origins to the end of the 2nd century A.D.)
+            - name: frequency_AetasPatrum
+              type: number
+              title: Frequency in the Aetas Patrum
+              description: The frequency of this item in the Aetas Patrum epoch in Tombeur's
+                Thesaurus (2nd century-735 A.D.)
+            - name: frequency_MediumAeuum
+              type: number
+              title: Frequency in the Medium Aeuum
+              description: The frequency of this item in the Medium Aeuum epoch in Tombeur's
+                Thesaurus (736-1499)
+            - name: frequency_RecentiorLatinitas
+              type: number
+              title: Frequency in the Recentior Latinitas
+              description: The frequency of this item in the Recention Latinitas epoch in
+                Tombeur's Thesaurus (1500-1965)
+  graphemes:
+    path: "LatInfLexi-graphemes.csv"
+  lexemes:
+    path: "LatInfLexi-lexemes.csv"
+    schema:
+        name: lexemes-schema
+        fields:
+            - name: frequency_Antiquitas
+              type: number
+              title: Frequency in the Antiquitas
+              description: The frequency of this item in the Antiquitas epoch in Tombeur's
+                Thesaurus (from the origins to the end of the 2nd century A.D.)
+            - name: frequency_AetasPatrum
+              type: number
+              title: Frequency in the Aetas Patrum
+              description: The frequency of this item in the Aetas Patrum epoch in Tombeur's
+                Thesaurus (2nd century-735 A.D.)
+            - name: frequency_MediumAeuum
+              type: number
+              title: Frequency in the Medium Aeuum
+              description: The frequency of this item in the Medium Aeuum epoch in Tombeur's
+                Thesaurus (736-1499)
+            - name: frequency_RecentiorLatinitas
+              type: number
+              title: Frequency in the Recentior Latinitas
+              description: The frequency of this item in the Recention Latinitas epoch in
+                Tombeur's Thesaurus (1500-1965)
+  sounds:
+    path: "LatInfLexi-sounds.csv"
+    schema:
+        name: sounds-schema
+        fields:
+            - name: tier
+              type: string
+              title: Tier to which the feature pertains
+              description: Tier to which the feature pertains
+            - name: value
+              type: string
+              title: Value of the feature
+              description: Value of the feature for non segmental tiers
+            - name: consonantal
+              type: boolean
+              title: Whether the sound displays the feature [consonantal]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [consonantal]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: sonorant
+              type: boolean
+              title: Whether the sound displays the feature [sonorant]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [sonorant]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: voice
+              type: boolean
+              title: Whether the sound displays the feature [voice]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [voice]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: laryngeal
+              type: boolean
+              title: Whether the sound displays the feature [laryngeal]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [laryngeal]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: spread_glottis
+              type: boolean
+              title: Whether the sound displays the feature [spread_glottis]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [spread_glottis]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: continuant
+              type: boolean
+              title: Whether the sound displays the feature [continuant]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [continuant]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: nasal
+              type: boolean
+              title: Whether the sound displays the feature [nasal]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [nasal]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: lateral
+              type: boolean
+              title: Whether the sound displays the feature [lateral]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [lateral]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: labial_consonantal
+              type: boolean
+              title: Whether the sound displays the feature [labial_consonantal]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [labial_consonantal]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: coronal
+              type: boolean
+              title: Whether the sound displays the feature [coronal]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [coronal]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: dorsal_consonantal
+              type: boolean
+              title: Whether the sound displays the feature [dorsal_consonantal]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [dorsal_consonantal]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: syllabic
+              type: boolean
+              title: Whether the sound displays the feature [syllabic]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [syllabic]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: labial_vocalic
+              type: boolean
+              title: Whether the sound displays the feature [labial_vocalic]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [labial_vocalic]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: dorsal_vocalic
+              type: boolean
+              title: Whether the sound displays the feature [dorsal_vocalic]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [dorsal_vocalic]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: high
+              type: boolean
+              title: Whether the sound displays the feature [high]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [high]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
+            - name: back
+              type: boolean
+              title: Whether the sound displays the feature [back]
+              description: Binary feature (1/0) indicating whether the segment displays the
+                feature [back]
+              trueValues:
+              - '1'
+              falseValues:
+              - '0'
