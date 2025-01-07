@@ -30,607 +30,8 @@
     "paradigms",
     "cells"
   ],
-  "version": "2.0",
+  "version": "2.0-Qumin",
   "resources": [
-    {
-      "name": "features-values",
-      "type": "table",
-      "title": "Grammatical features values",
-      "path": "LatInfLexi-features-values.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": {
-        "name": "features-values-schema",
-        "fields": [
-          {
-            "name": "value_id",
-            "type": "string",
-            "title": "Grammatical Feature value identifier",
-            "description": "Identifier for the grammatical feature value (as found in the cell)",
-            "constraints": {
-              "required": true,
-              "unique": true
-            }
-          },
-          {
-            "name": "label",
-            "type": "string",
-            "title": "label for this row",
-            "description": "A human readable label for the row.",
-            "rdfProperty": "http://www.w3.org/2000/01/rdf-schema#label"
-          },
-          {
-            "name": "feature",
-            "type": "string",
-            "title": "feature",
-            "description": "The name of the dimension of this feature, eg. case, tense, modality, voice, force, gender, evidentiality, person, number, polarity...",
-            "constraints": {
-              "required": true
-            },
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#feature"
-          },
-          {
-            "name": "canonical_order",
-            "type": "integer",
-            "title": "Sorting order for visual presentation",
-            "description": "The order in which items are canonically presented. Use integers to represent relative order, order is used per-item.",
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#canonical_order"
-          }
-        ],
-        "primaryKey": [
-          "value_id"
-        ]
-      },
-      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#FeatureValue"
-    },
-    {
-      "name": "forms",
-      "type": "table",
-      "title": "Inflected forms",
-      "path": "LatInfLexi-forms.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": {
-        "name": "forms-schema",
-        "fields": [
-          {
-            "name": "form_id",
-            "type": "string",
-            "title": "Form table row identifiers",
-            "description": "These identifiers are specific to form, lexeme, cell triples.",
-            "constraints": {
-              "required": true,
-              "unique": true
-            }
-          },
-          {
-            "name": "lexeme",
-            "type": "string",
-            "title": "Reference to a lexeme identifier",
-            "description": "Lexeme identifiers must be unique to paradigms.",
-            "constraints": {
-              "required": true
-            },
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#lexeme"
-          },
-          {
-            "name": "cell",
-            "type": "string",
-            "title": "Reference to a cell identifier",
-            "description": "The set of feature values as would appear in a gloss, separated by dots, eg. prs.ind.1sg or f.pl",
-            "constraints": {
-              "required": true
-            },
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#cell"
-          },
-          {
-            "name": "orth_form",
-            "type": "string",
-            "title": "Inflected form (orthographic)",
-            "description": "The form, given orthographically",
-            "missingValues": [
-              "#DEF#"
-            ],
-            "constraints": {
-              "pattern": "(a|ā|b|c|d|e|ē|f|g|h|i|ī|k|l|m|n|o|ō|p|q|r|s|t|u|ū|x|y|z)+"
-            },
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#orth_form"
-          },
-          {
-            "name": "phon_form",
-            "type": "string",
-            "title": "Inflected form (phonemic or phonetic)",
-            "description": "The form, given in phonemic or phonetic notation, with sounds separated by spaces",
-            "missingValues": [
-              "#DEF#"
-            ],
-            "constraints": {
-              "pattern": "((ˈ|ː)*(pʰ|tʰ|kʰ|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*)( ((ˈ|ː)*(pʰ|tʰ|kʰ|b|d|ɡ|m|n|l|r|p|f|t|s|k|h|j|w|a|e|i|o|u|y)(ˈ|ː)*))*"
-            },
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#phon_form"
-          },
-          {
-            "name": "frequency",
-            "type": "number",
-            "title": "Frequency",
-            "description": "Frequency for this row.",
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#frequency"
-          },
-          {
-            "name": "frequency_Antiquitas",
-            "type": "number",
-            "title": "Frequency in the Antiquitas",
-            "description": "The frequency of this item in the Antiquitas epoch in Tombeur's Thesaurus (from the origins to the end of the 2nd century A.D.)"
-          },
-          {
-            "name": "frequency_AetasPatrum",
-            "type": "number",
-            "title": "Frequency in the Aetas Patrum",
-            "description": "The frequency of this item in the Aetas Patrum epoch in Tombeur's Thesaurus (2nd century-735 A.D.)"
-          },
-          {
-            "name": "frequency_MediumAeuum",
-            "type": "number",
-            "title": "Frequency in the Medium Aeuum",
-            "description": "The frequency of this item in the Medium Aeuum epoch in Tombeur's Thesaurus (736-1499)"
-          },
-          {
-            "name": "frequency_RecentiorLatinitas",
-            "type": "number",
-            "title": "Frequency in the Recentior Latinitas",
-            "description": "The frequency of this item in the Recention Latinitas epoch in Tombeur's Thesaurus (1500-1965)"
-          },
-          {
-            "name": "POS",
-            "type": "string",
-            "title": "Part of Speech",
-            "description": "The relevant part of speech for this item. This must refer to a PartOfSpeech entity from the lexinfo (https://lexinfo.net/) ontology.",
-            "constraints": {
-              "enum": [
-                "verb",
-                "numeral",
-                "conjunction",
-                "noun",
-                "adposition",
-                "determiner",
-                "article",
-                "adverb",
-                "pronoun",
-                "fusedPreposition",
-                "adjective",
-                "symbol",
-                "particle",
-                "conditionalParticle",
-                "demonstrativePronoun",
-                "interjection",
-                "semiColon",
-                "diminutiveNoun",
-                "possessivePronoun",
-                "prepositionalAdverb",
-                "compoundPreposition",
-                "interrogativeRelativePronoun",
-                "possessiveParticle",
-                "plainVerb",
-                "letter",
-                "interrogativeDeterminer",
-                "relativePronoun",
-                "postposition",
-                "fusedPronounAuxiliary",
-                "interrogativeOrdinalNumeral",
-                "indefiniteOrdinalNumeral",
-                "strongPersonalPronoun",
-                "possessiveRelativePronoun",
-                "ordinalAdjective",
-                "collectivePronoun",
-                "commonNoun",
-                "infinitiveParticle",
-                "comparativeParticle",
-                "partitiveArticle",
-                "invertedComma",
-                "lightVerb",
-                "emphaticPronoun",
-                "distinctiveParticle",
-                "genericNumeral",
-                "possessiveAdjective",
-                "reflexivePossessivePronoun",
-                "colon",
-                "coordinationParticle",
-                "presentParticipleAdjective",
-                "fusedPrepositionPronoun",
-                "cardinalNumeral",
-                "indefiniteDeterminer",
-                "numeralFraction",
-                "questionMark",
-                "generalAdverb",
-                "superlativeParticle",
-                "point",
-                "indefiniteMultiplicativeNumeral",
-                "comma",
-                "closeParenthesis",
-                "futureParticle",
-                "personalPronoun",
-                "reflexivePersonalPronoun",
-                "adverbialPronoun",
-                "reciprocalPronoun",
-                "openParenthesis",
-                "pastParticipleAdjective",
-                "negativePronoun",
-                "relativeDeterminer",
-                "existentialPronoun",
-                "pronominalAdverb",
-                "relativeParticle",
-                "exclamativeDeterminer",
-                "multiplicativeNumeral",
-                "reflexiveDeterminer",
-                "modal",
-                "unclassifiedParticle",
-                "properNoun",
-                "allusivePronoun",
-                "interrogativeCardinalNumeral",
-                "bullet",
-                "subordinatingConjunction",
-                "irreflexivePersonalPronoun",
-                "possessiveDeterminer",
-                "negativeParticle",
-                "indefinitePronoun",
-                "generalizationWord",
-                "coordinatingConjunction",
-                "deficientVerb",
-                "adjective-i",
-                "impersonalPronoun",
-                "indefiniteCardinalNumeral",
-                "adjective-na",
-                "qualifierAdjective",
-                "affirmativeParticle",
-                "mainVerb",
-                "fusedPrepositionDeterminer",
-                "indefiniteArticle",
-                "weakPersonalPronoun",
-                "suspensionPoints",
-                "interrogativeMultiplicativeNumeral",
-                "affixedPersonalPronoun",
-                "auxiliary",
-                "circumposition",
-                "copula",
-                "demonstrativeDeterminer",
-                "participleAdjective",
-                "exclamativePoint",
-                "interrogativePronoun",
-                "presentativePronoun",
-                "punctuation",
-                "definiteArticle",
-                "slash",
-                "exclamativePronoun",
-                "preposition",
-                "conditionalPronoun",
-                "relationNoun",
-                "interrogativeParticle"
-              ]
-            },
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#POS"
-          }
-        ],
-        "primaryKey": [
-          "form_id"
-        ],
-        "foreignKeys": [
-          {
-            "fields": [
-              "cell"
-            ],
-            "reference": {
-              "resource": "cells",
-              "fields": [
-                "cell_id"
-              ]
-            }
-          },
-          {
-            "fields": [
-              "lexeme"
-            ],
-            "reference": {
-              "resource": "lexemes",
-              "fields": [
-                "lexeme_id"
-              ]
-            }
-          }
-        ]
-      },
-      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Form"
-    },
-    {
-      "name": "graphemes",
-      "type": "table",
-      "title": "Graphemes inventory",
-      "path": "LatInfLexi-graphemes.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": {
-        "name": "graphemes-schema",
-        "fields": [
-          {
-            "name": "grapheme_id",
-            "type": "string",
-            "title": "grapheme representation",
-            "description": "These identifiers are specific to graphemes.",
-            "constraints": {
-              "required": true,
-              "unique": true
-            },
-            "rdfType": "http://linguistics-ontology.org/gold/2010/Grapheme"
-          },
-          {
-            "name": "canonical_order",
-            "type": "integer",
-            "title": "Sorting order for visual presentation",
-            "description": "The order in which items are canonically presented. Use integers to represent relative order, order is used per-item.",
-            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#canonical_order"
-          }
-        ],
-        "missingValues": [
-          ""
-        ],
-        "primaryKey": [
-          "grapheme_id"
-        ]
-      },
-      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Grapheme"
-    },
-    {
-      "name": "sounds",
-      "type": "table",
-      "title": "Sound inventory with distinctive features",
-      "path": "LatInfLexi-sounds.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": {
-        "name": "sounds-schema",
-        "fields": [
-          {
-            "name": "sound_id",
-            "type": "string",
-            "title": "sound representation",
-            "description": "These identifiers are specific to sounds.",
-            "constraints": {
-              "required": true,
-              "unique": true
-            }
-          },
-          {
-            "name": "tier",
-            "type": "string",
-            "title": "Tier to which the feature pertains",
-            "description": "Tier to which the feature pertains"
-          },
-          {
-            "name": "value",
-            "type": "string",
-            "title": "Value of the feature",
-            "description": "Value of the feature for non segmental tiers"
-          },
-          {
-            "name": "consonantal",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [consonantal]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [consonantal]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "sonorant",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [sonorant]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [sonorant]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "voice",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [voice]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [voice]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "laryngeal",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [laryngeal]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [laryngeal]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "spread_glottis",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [spread_glottis]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [spread_glottis]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "continuant",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [continuant]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [continuant]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "nasal",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [nasal]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [nasal]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "lateral",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [lateral]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [lateral]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "labial_consonantal",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [labial_consonantal]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [labial_consonantal]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "coronal",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [coronal]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [coronal]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "dorsal_consonantal",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [dorsal_consonantal]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [dorsal_consonantal]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "syllabic",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [syllabic]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [syllabic]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "labial_vocalic",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [labial_vocalic]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [labial_vocalic]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "dorsal_vocalic",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [dorsal_vocalic]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [dorsal_vocalic]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "high",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [high]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [high]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          },
-          {
-            "name": "back",
-            "type": "boolean",
-            "title": "Whether the sound displays the feature [back]",
-            "description": "Binary feature (1/0) indicating whether the segment displays the feature [back]",
-            "trueValues": [
-              "1"
-            ],
-            "falseValues": [
-              "0"
-            ]
-          }
-        ],
-        "missingValues": [
-          ""
-        ],
-        "primaryKey": [
-          "sound_id"
-        ]
-      },
-      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Sound"
-    },
-    {
-      "name": "data_sheet",
-      "type": "text",
-      "title": "Data Sheet",
-      "description": "Data Sheet",
-      "path": "data_sheet.md",
-      "scheme": "file",
-      "format": "md",
-      "mediatype": "text/markdown",
-      "encoding": "utf-8"
-    },
     {
       "name": "cells",
       "type": "table",
@@ -1039,6 +440,287 @@
       "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Lexeme"
     },
     {
+      "name": "sounds",
+      "type": "table",
+      "title": "Sound inventory with distinctive features",
+      "path": "LatInfLexi-sounds.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "sounds-schema",
+        "fields": [
+          {
+            "name": "sound_id",
+            "type": "string",
+            "title": "sound representation",
+            "description": "These identifiers are specific to sounds.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "stressed",
+            "type": "any"
+          },
+          {
+            "name": "consonantal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [consonantal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [consonantal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "sonorant",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [sonorant]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [sonorant]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "approximant",
+            "type": "any"
+          },
+          {
+            "name": "voice",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [voice]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [voice]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "spread_glottis",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [spread_glottis]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [spread_glottis]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "continuant",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [continuant]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [continuant]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "nasal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [nasal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [nasal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "lateral",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [lateral]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [lateral]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "labial",
+            "type": "any"
+          },
+          {
+            "name": "labiodental",
+            "type": "any"
+          },
+          {
+            "name": "coronal",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [coronal]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [coronal]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "dorsal",
+            "type": "any"
+          },
+          {
+            "name": "high",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [high]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [high]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "low",
+            "type": "any"
+          },
+          {
+            "name": "front",
+            "type": "any"
+          },
+          {
+            "name": "back",
+            "type": "boolean",
+            "title": "Whether the sound displays the feature [back]",
+            "description": "Binary feature (1/0) indicating whether the segment displays the feature [back]",
+            "trueValues": [
+              "1"
+            ],
+            "falseValues": [
+              "0"
+            ]
+          },
+          {
+            "name": "long",
+            "type": "any"
+          },
+          {
+            "name": "round",
+            "type": "any"
+          }
+        ],
+        "missingValues": [
+          ""
+        ],
+        "primaryKey": [
+          "sound_id"
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Sound"
+    },
+    {
+      "name": "features-values",
+      "type": "table",
+      "title": "Grammatical features values",
+      "path": "LatInfLexi-features-values.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "features-values-schema",
+        "fields": [
+          {
+            "name": "value_id",
+            "type": "string",
+            "title": "Grammatical Feature value identifier",
+            "description": "Identifier for the grammatical feature value (as found in the cell)",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "label",
+            "type": "string",
+            "title": "label for this row",
+            "description": "A human readable label for the row.",
+            "rdfProperty": "http://www.w3.org/2000/01/rdf-schema#label"
+          },
+          {
+            "name": "feature",
+            "type": "string",
+            "title": "feature",
+            "description": "The name of the dimension of this feature, eg. case, tense, modality, voice, force, gender, evidentiality, person, number, polarity...",
+            "constraints": {
+              "required": true
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#feature"
+          },
+          {
+            "name": "canonical_order",
+            "type": "integer",
+            "title": "Sorting order for visual presentation",
+            "description": "The order in which items are canonically presented. Use integers to represent relative order, order is used per-item.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#canonical_order"
+          }
+        ],
+        "primaryKey": [
+          "value_id"
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#FeatureValue"
+    },
+    {
+      "name": "graphemes",
+      "type": "table",
+      "title": "Graphemes inventory",
+      "path": "LatInfLexi-graphemes.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "graphemes-schema",
+        "fields": [
+          {
+            "name": "grapheme_id",
+            "type": "string",
+            "title": "grapheme representation",
+            "description": "These identifiers are specific to graphemes.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            },
+            "rdfType": "http://linguistics-ontology.org/gold/2010/Grapheme"
+          },
+          {
+            "name": "canonical_order",
+            "type": "integer",
+            "title": "Sorting order for visual presentation",
+            "description": "The order in which items are canonically presented. Use integers to represent relative order, order is used per-item.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#canonical_order"
+          }
+        ],
+        "missingValues": [
+          ""
+        ],
+        "primaryKey": [
+          "grapheme_id"
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Grapheme"
+    },
+    {
       "name": "readme",
       "type": "text",
       "title": "Read me",
@@ -1048,6 +730,276 @@
       "format": "md",
       "mediatype": "text/markdown",
       "encoding": "utf-8"
+    },
+    {
+      "name": "data_sheet",
+      "type": "text",
+      "title": "Data Sheet",
+      "description": "Data Sheet",
+      "path": "data_sheet.md",
+      "scheme": "file",
+      "format": "md",
+      "mediatype": "text/markdown",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "forms",
+      "type": "table",
+      "title": "Inflected forms",
+      "path": "LatInfLexi-forms.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "name": "forms-schema",
+        "fields": [
+          {
+            "name": "form_id",
+            "type": "string",
+            "title": "Form table row identifiers",
+            "description": "These identifiers are specific to form, lexeme, cell triples.",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "lexeme",
+            "type": "string",
+            "title": "Reference to a lexeme identifier",
+            "description": "Lexeme identifiers must be unique to paradigms.",
+            "constraints": {
+              "required": true
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#lexeme"
+          },
+          {
+            "name": "cell",
+            "type": "string",
+            "title": "Reference to a cell identifier",
+            "description": "The set of feature values as would appear in a gloss, separated by dots, eg. prs.ind.1sg or f.pl",
+            "constraints": {
+              "required": true
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#cell"
+          },
+          {
+            "name": "orth_form",
+            "type": "string",
+            "title": "Inflected form (orthographic)",
+            "description": "The form, given orthographically",
+            "missingValues": [
+              "#DEF#"
+            ],
+            "constraints": {
+              "pattern": "(a|ā|b|c|d|e|ē|f|g|h|i|ī|k|l|m|n|o|ō|p|q|r|s|t|u|ū|x|y|z)+"
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#orth_form"
+          },
+          {
+            "name": "phon_form",
+            "type": "string",
+            "title": "Inflected form (phonemic or phonetic)",
+            "description": "The form, given in phonemic or phonetic notation, with sounds separated by spaces",
+            "missingValues": [
+              "#DEF#"
+            ],
+            "constraints": {
+              "pattern": "(ˈaː|ˈeː|ˈiː|ˈoː|ˈuː|pʰ|tʰ|kʰ|ˈa|aː|ˈe|eː|ˈi|iː|ˈo|oː|ˈu|uː|ˈy|yː|b|d|ɡ|m|n|l|r|z|p|f|t|s|k|h|j|w|a|e|i|o|u|y)( (ˈaː|ˈeː|ˈiː|ˈoː|ˈuː|pʰ|tʰ|kʰ|ˈa|aː|ˈe|eː|ˈi|iː|ˈo|oː|ˈu|uː|ˈy|yː|b|d|ɡ|m|n|l|r|z|p|f|t|s|k|h|j|w|a|e|i|o|u|y))*"
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#phon_form"
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": "Frequency",
+            "description": "Frequency for this row.",
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#frequency"
+          },
+          {
+            "name": "frequency_Antiquitas",
+            "type": "number",
+            "title": "Frequency in the Antiquitas",
+            "description": "The frequency of this item in the Antiquitas epoch in Tombeur's Thesaurus (from the origins to the end of the 2nd century A.D.)"
+          },
+          {
+            "name": "frequency_AetasPatrum",
+            "type": "number",
+            "title": "Frequency in the Aetas Patrum",
+            "description": "The frequency of this item in the Aetas Patrum epoch in Tombeur's Thesaurus (2nd century-735 A.D.)"
+          },
+          {
+            "name": "frequency_MediumAeuum",
+            "type": "number",
+            "title": "Frequency in the Medium Aeuum",
+            "description": "The frequency of this item in the Medium Aeuum epoch in Tombeur's Thesaurus (736-1499)"
+          },
+          {
+            "name": "frequency_RecentiorLatinitas",
+            "type": "number",
+            "title": "Frequency in the Recentior Latinitas",
+            "description": "The frequency of this item in the Recention Latinitas epoch in Tombeur's Thesaurus (1500-1965)"
+          },
+          {
+            "name": "POS",
+            "type": "string",
+            "title": "Part of Speech",
+            "description": "The relevant part of speech for this item. This must refer to a PartOfSpeech entity from the lexinfo (https://lexinfo.net/) ontology.",
+            "constraints": {
+              "enum": [
+                "verb",
+                "numeral",
+                "conjunction",
+                "noun",
+                "adposition",
+                "determiner",
+                "article",
+                "adverb",
+                "pronoun",
+                "fusedPreposition",
+                "adjective",
+                "symbol",
+                "particle",
+                "conditionalParticle",
+                "demonstrativePronoun",
+                "interjection",
+                "semiColon",
+                "diminutiveNoun",
+                "possessivePronoun",
+                "prepositionalAdverb",
+                "compoundPreposition",
+                "interrogativeRelativePronoun",
+                "possessiveParticle",
+                "plainVerb",
+                "letter",
+                "interrogativeDeterminer",
+                "relativePronoun",
+                "postposition",
+                "fusedPronounAuxiliary",
+                "interrogativeOrdinalNumeral",
+                "indefiniteOrdinalNumeral",
+                "strongPersonalPronoun",
+                "possessiveRelativePronoun",
+                "ordinalAdjective",
+                "collectivePronoun",
+                "commonNoun",
+                "infinitiveParticle",
+                "comparativeParticle",
+                "partitiveArticle",
+                "invertedComma",
+                "lightVerb",
+                "emphaticPronoun",
+                "distinctiveParticle",
+                "genericNumeral",
+                "possessiveAdjective",
+                "reflexivePossessivePronoun",
+                "colon",
+                "coordinationParticle",
+                "presentParticipleAdjective",
+                "fusedPrepositionPronoun",
+                "cardinalNumeral",
+                "indefiniteDeterminer",
+                "numeralFraction",
+                "questionMark",
+                "generalAdverb",
+                "superlativeParticle",
+                "point",
+                "indefiniteMultiplicativeNumeral",
+                "comma",
+                "closeParenthesis",
+                "futureParticle",
+                "personalPronoun",
+                "reflexivePersonalPronoun",
+                "adverbialPronoun",
+                "reciprocalPronoun",
+                "openParenthesis",
+                "pastParticipleAdjective",
+                "negativePronoun",
+                "relativeDeterminer",
+                "existentialPronoun",
+                "pronominalAdverb",
+                "relativeParticle",
+                "exclamativeDeterminer",
+                "multiplicativeNumeral",
+                "reflexiveDeterminer",
+                "modal",
+                "unclassifiedParticle",
+                "properNoun",
+                "allusivePronoun",
+                "interrogativeCardinalNumeral",
+                "bullet",
+                "subordinatingConjunction",
+                "irreflexivePersonalPronoun",
+                "possessiveDeterminer",
+                "negativeParticle",
+                "indefinitePronoun",
+                "generalizationWord",
+                "coordinatingConjunction",
+                "deficientVerb",
+                "adjective-i",
+                "impersonalPronoun",
+                "indefiniteCardinalNumeral",
+                "adjective-na",
+                "qualifierAdjective",
+                "affirmativeParticle",
+                "mainVerb",
+                "fusedPrepositionDeterminer",
+                "indefiniteArticle",
+                "weakPersonalPronoun",
+                "suspensionPoints",
+                "interrogativeMultiplicativeNumeral",
+                "affixedPersonalPronoun",
+                "auxiliary",
+                "circumposition",
+                "copula",
+                "demonstrativeDeterminer",
+                "participleAdjective",
+                "exclamativePoint",
+                "interrogativePronoun",
+                "presentativePronoun",
+                "punctuation",
+                "definiteArticle",
+                "slash",
+                "exclamativePronoun",
+                "preposition",
+                "conditionalPronoun",
+                "relationNoun",
+                "interrogativeParticle"
+              ]
+            },
+            "rdfProperty": "https://www.paralex-standard.org/paralex_ontology.xml#POS"
+          }
+        ],
+        "primaryKey": [
+          "form_id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "cell"
+            ],
+            "reference": {
+              "resource": "cells",
+              "fields": [
+                "cell_id"
+              ]
+            }
+          },
+          {
+            "fields": [
+              "lexeme"
+            ],
+            "reference": {
+              "resource": "lexemes",
+              "fields": [
+                "lexeme_id"
+              ]
+            }
+          }
+        ]
+      },
+      "rdfType": "https://www.paralex-standard.org/paralex_ontology.xml#Form"
     }
   ],
   "citation": "Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.",
@@ -1055,5 +1007,5 @@
   "languages_iso639": [
     "lat"
   ],
-  "paralex-version": "2.2.1"
+  "paralex-version": "2.2.3"
 }

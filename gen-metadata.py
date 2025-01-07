@@ -164,7 +164,7 @@ package = paralex_factory("LatInfLexi",
                                           }
                           },
                           citation="Pellegrini, M. & Passarotti, M. & Beniamine, S. (2023). LatInfLexi 2.0. Online.",
-                          version="2.0",
+                          version="2.0-Qumin",
                           keywords=["Latin", "verbs", "nouns", "paradigms", "cells"],
                           id="http://doi.org/10.5281/zenodo.10522692",
                           contributors=[{'title': 'Matteo Pellegrini', 'role': 'author'},
