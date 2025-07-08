@@ -1,0 +1,29 @@
+# all tokens of LASLA with the set of UD features associated to them
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX lime: <http://www.w3.org/ns/lemon/lime#>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX lila: <http://lila-erc.eu/ontologies/lila/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+prefix powla: <http://purl.org/powla/powla.owl#>
+prefix paralex: <https://www.paralex-standard.org/paralex_ontology.xml#>
+prefix oa: <http://www.w3.org/ns/oa#>
+
+SELECT ?token ?tokenLabel ?lila_id_lemma (group_concat(distinct ?body;separator="; ") as ?UD_features)# (count(?lila_id_lemma) as ?freq)    
+WHERE {
+  <http://lila-erc.eu/data/corpora/Lasla/id/corpus> powla:hasSubDocument ?doc.
+  ?doc ^powla:hasDocument ?docLayer.
+  ?docLayer rdf:type powla:DocumentLayer;
+            ^powla:hasLayer ?token.
+  ?token rdf:type powla:Terminal;
+         lila:hasLemma ?lila_id_lemma;
+         rdfs:label ?tokenLabel;
+         #powla:hasStringValue "est";
+         ^oa:hasTarget ?ud_feat .
+  ?lila_id_lemma lila:hasPOS lila:verb .
+  ?ud_feat oa:hasBody ?body .
+}
+#GROUP BY ?tokenLabel ?lila_id_lemma ?token
+#ORDER BY DESC(?freq)
+#LIMIT 50
